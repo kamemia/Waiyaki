@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layouts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .box {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .box-new {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px;
+            float: left; /* Float the boxes to the left */
+        }
+        .block-element {
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ddd;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .inline-elements {
+            text-align: center;
+        }
+
+        .inline-elements p {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .static {
+            background-color: #f8d7da;
+            padding: 20px;
+            position: static;
+        }
+
+        .relative {
+            background-color: #d4edda;
+            padding: 20px;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .absolute {
+            background-color: #cce5ff;
+            padding: 20px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .fixed {
+            background-color: #fff3cd;
+            padding: 20px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden; /* Clear the float to contain the floated boxes */
+        }
+        .container-flex {
+            display: flex; /* Establishes a flex container */
+            justify-content: space-around; /* Aligns items along the main axis with space around them */
+            align-items: center; /* Aligns items along the cross axis at the center */
+            height: 100vh; /* 100% of the viewport height */
+        }
+
+        .box-flex {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px;
+        }
+
+        .container-grid {
+            display: grid; /* Establishes a grid container */
+            grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+            gap: 20px; /* Gap between grid items */
+            justify-content: center; /* Center the grid items along the row axis */
+            align-items: center; /* Center the grid items along the column axis */
+            height: 100vh; /* 100% of the viewport height */
+        }
+
+        .box-grid {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="hoz.html">Center content</a>
+        <a href="about.html">Responsiveness</a>
+        <a href="image.html">Images</a>
+        <a href="tables.html">Tables</a>
+        <a href="#">Fixed</a>
+    </nav>
+
+    <div class="box">
+        <h2>Your Box Content Goes Here</h2>
+        <p>This is a sample box inside the body with some styling applied.</p>
+    </div>
+
+    <div class="block-element">
+        <h2>Block Element</h2>
+        <p>This is a block-level element with some styling applied.</p>
+    </div>
+
+    <div class="inline-elements">
+        <h2>Inline Elements</h2>
+        <p>This is <span style="color: blue;">inline</span> text with some <strong>strong</strong> and <em>emphasized</em> elements.</p>
+    </div>
+
+    
+    <div class="static">
+        <h2>Static Position</h2>
+        <p>This is a static positioned element. It is positioned according to the normal flow of the document.</p>
+    </div>
+
+    <div class="relative">
+        <h2>Relative Position</h2>
+        <p>This is a relatively positioned element. It is positioned relative to its normal position in the document flow.</p>
+    </div>
+
+    <div class="absolute">
+        <h2>Absolute Position</h2>
+        <p>This is an absolutely positioned element. It is positioned relative to the nearest positioned ancestor (if any), otherwise relative to the initial containing block.</p>
+    </div>
+
+    <div class="fixed">
+        <h2>Fixed Position</h2>
+        <p>This is a fixed positioned element. It is positioned relative to the browser window, and will not move even if the page is scrolled.</p>
+    </div>
+
+    <div class="container">
+        <div class="box-new">Box 1</div>
+        <div class="box-new">Box 2</div>
+        <div class="box-new">Box 3</div>
+        <div class="box-new">Box 4</div>
+        <!-- Add more boxes as needed -->
+    </div>
+
+    <div class="container-flex">
+        <div class="box-flex">Box 1</div>
+        <div class="box-flex">Box 2</div>
+        <div class="box-flex">Box 3</div>
+        <div class="box-flex">Box 4</div>
+        <!-- Add more boxes as needed -->
+    </div>
+
+    <div class="container-grid">
+        <div class="box-grid">Box 1</div>
+        <div class="box-grid">Box 2</div>
+        <div class="box-grid">Box 3</div>
+        <div class="box-grid">Box 4</div>
+        <!-- Add more boxes as needed -->
+    </div>
+
+    
+
+</body>
+</html>
